@@ -4,23 +4,27 @@ public class Border {
 
 	private Country state1;
 	private Country state2;
+	private int cod1;
+	private int cod2;
 	private String abb1;
 	private String abb2;
 	private int years;
 	private Model model;
 	
-	public Border(String abb1, String abb2, int years) {
+	public Border(int cod1, String abb1, int cod2, String abb2, int years) {
 		super();
 		model = new Model();
+		this.cod1 = cod1;
+		this.cod2 = cod2;
 		this.abb1 = abb1;
 		this.abb2 = abb2;
 		this.years = years;
-		this.state1 = model.getCountries().get(abb1);
-		this.state2 = model.getCountries().get(abb2);
+		this.state1 = model.getCountries().get(cod1);
+		this.state2 = model.getCountries().get(cod2);
 	}
 
 	public Country getState1() {
-		return model.getCountries().get(abb1);
+		return model.getCountries().get(cod1);
 	}
 
 	public void setState1(Country state1) {
@@ -28,12 +32,38 @@ public class Border {
 	}
 
 	public Country getState2() {
-		return model.getCountries().get(abb2);
+		return model.getCountries().get(cod2);
 	}
 
 	public void setState2(Country state2) {
 		this.state2 = state2;
 	}
+
+	public int getCod1() {
+		return cod1;
+	}
+
+	public void setCod1(int cod1) {
+		this.cod1 = cod1;
+	}
+
+	public int getCod2() {
+		return cod2;
+	}
+
+	public void setCod2(int cod2) {
+		this.cod2 = cod2;
+	}
+
+	public int getYears() {
+		return years;
+	}
+
+	public void setYears(int years) {
+		this.years = years;
+	}
+	
+	
 
 	public String getAbb1() {
 		return abb1;
@@ -49,14 +79,6 @@ public class Border {
 
 	public void setAbb2(String abb2) {
 		this.abb2 = abb2;
-	}
-
-	public int getYears() {
-		return years;
-	}
-
-	public void setYears(int years) {
-		this.years = years;
 	}
 
 	@Override

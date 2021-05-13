@@ -12,17 +12,19 @@ public class TestDAO {
 	public static void main(String[] args) {
 
 		BordersDAO dao = new BordersDAO();
-
+		Map<Integer, Country> mappa = new HashMap<Integer, Country>();
 	
 		System.out.println("Lista di tutte le nazioni:");
 		System.out.println(dao.loadAllCountries().get("USA"));
 		
-		Map<String, Country> countries = new HashMap<String, Country>(dao.loadAllCountries());
+		Map<Integer, Country> countries = new HashMap<Integer, Country>(dao.loadAllCountries());
 		
 		System.out.println(countries.values());
 		
-		dao.getCountryPairs(1817);
+		System.out.println("Borders");
 		
-		//System.out.println();
+		System.out.println(dao.getCountryPairs(1817, mappa));
+		
+		System.out.println(mappa.values());
 	}
 }

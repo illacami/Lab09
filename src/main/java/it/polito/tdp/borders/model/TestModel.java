@@ -9,14 +9,18 @@ public class TestModel {
 
 		Model model = new Model();
 		
-		Border b = new Border("USA", "CAN", 1920);  //quando creo un nuovo border mi aggiunge i Coutry
+		Border b = new Border(2, "USA", 20, "CAN", 1920);  //quando creo un nuovo border mi aggiunge i Coutry
 		System.out.println(b.toString());
 
 		System.out.println("TestModel -- TODO");
 		
-		Map<String, Country> countries = model.getCountries();
+		Map<Integer, Country> countries = model.getCountries();
 		System.out.format("Trovate %d nazioni\n", countries.size());
 	
+		
+		System.out.println(model.getBorders(2000));
+		System.out.println("Vertici:");
+		System.out.println(model.getCountriesVertici());
 		
 		System.out.println("Creo il grafo relativo al 2000");
 		model.createGraph(2000);
